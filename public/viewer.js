@@ -30,7 +30,10 @@ async function handleNegotiationNeededEvent(peer) {
     sdp: peer.localDescription,
   };
 
-  const { data } = await axios.post('/consumer', payload);
+  const { data } = await axios.post(
+    'ec2-52-21-215-205.compute-1.amazonaws.com:5000/consumer',
+    payload
+  );
   const desc = new RTCSessionDescription(data.sdp);
   peer.setRemoteDescription(desc).catch((e) => console.log(e));
 }
