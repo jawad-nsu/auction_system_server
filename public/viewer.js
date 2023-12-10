@@ -31,7 +31,7 @@ async function handleNegotiationNeededEvent(peer) {
   };
 
   const { data } = await axios.post(
-    'ec2-52-21-215-205.compute-1.amazonaws.com:5000/consumer',
+    'https://shadcnuiexample.com/consumer',
     payload
   );
   const desc = new RTCSessionDescription(data.sdp);
